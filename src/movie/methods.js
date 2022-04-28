@@ -23,8 +23,7 @@ exports.listMovies = async () => {
 exports.updateMovies = async (movieObj) => {
 	try {
 		await Movie.findOneAndUpdate(
-			{ title: movieObj.title }, 
-			{$set:{title: movieObj.title, actor: movieObj.actor, year: movieObj.year}})
+			{title: movieObj.title, actor: movieObj.actor, year: movieObj.year})
 		
 	} catch (err) {
 		console.log(err)
@@ -39,3 +38,11 @@ exports.deleteMovie = async (movieObj) => {
 		console.log(err)
 	}
 }
+
+// exports.searchMovies = async (movieObj) => {
+// 	try{
+// 	  await Movie.find({ title: movieObj }).exec()
+// 	} catch (err) {
+// 		console.log(err)
+// 	}
+// }

@@ -14,7 +14,13 @@ const movieSchema = new mongoose.Schema({
 	// rating {
 	// 	type: Number,
 	// }
-})
+	year: {
+		type: Number,
+		default: 'Not specified',
+	}
+},
+// { typeKey: '$type' }
+)
 
 const Movie = mongoose.model('Movie', movieSchema)
 
