@@ -33,16 +33,33 @@ exports.updateMovies = async (movieObj) => {
 // allows you to search for a specific movie and delete it by title
 exports.deleteMovie = async (movieObj) => {
 	try{
-		await Movie.deleteOne({title: movieObj.title})
+		await Movie.deleteOne({ title: movieObj.title })
 	} catch (err) {
 		console.log(err)
 	}
 }
 
-// exports.searchMovies = async (movieObj) => {
-// 	try{
-// 	  await Movie.find({ title: movieObj }).exec()
-// 	} catch (err) {
-// 		console.log(err)
-// 	}
-// }
+exports.searchMovies = async (movieObj) => {
+	try{
+	return await Movie.find({ title: movieObj.title })
+	} catch (err) {
+		console.log(err)
+	}
+}
+
+exports. searchActor = async (movieObj) => {
+	try{
+		return await Movie.find({ actor: movieObj.actor })
+	} catch (err) {
+		console.log(err)
+	}
+}
+
+exports.searchYear = async (movieObj) => {
+	try {
+		return await Movie.find({ year: movieObj.year })
+	} catch (err) {
+		console.log(err)
+	}
+}
+
